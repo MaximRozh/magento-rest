@@ -1,0 +1,17 @@
+@import "./var.scss";
+
+.layout {
+  padding: 10px;
+  .main-container {
+    max-width: 1400px;
+    margin: auto;
+    width: 100%;
+    @media (max-width: $medium) {
+      overflow-x: clip;
+    }
+  }
+  .header {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}

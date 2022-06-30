@@ -1,0 +1,85 @@
+@import "./var.scss";
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  @media (max-width: $medium) {
+    max-width: 300px;
+  }
+  @media (max-width: $small) {
+    order: 1;
+    max-width: 100%;
+  }
+}
+
+// colors
+$input-background: rgba(57, 63, 84, 0.8);
+$input-text-inactive: #7881a1;
+$input-text-active: #bfd2ff;
+
+// gradient animation
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.webflow-style-input {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  border-radius: 2px;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+    height: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    background: linear-gradient(
+      to right,
+      #f02d34,
+      #64b0f3,
+      #ff0009,
+      #64b0f3,
+      #f02d34,
+      #64b0f3
+    );
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite;
+  }
+}
+
+.webflow-style-input input {
+  flex-grow: 1;
+  color: darkslategray;
+  width: 100%;
+  font-size: 18px;
+  line-height: 1rem;
+  vertical-align: middle;
+  padding-left: 5px;
+  &::-webkit-input-placeholder {
+    color: $input-text-inactive;
+  }
+  @media (max-width: $small) {
+    font-size: 18px;
+  }
+}
+
+.webflow-style-input button {
+  color: $input-text-inactive;
+  font-size: 24px;
+  vertical-align: middle;
+  transition: color 0.25s;
+  cursor: pointer;
+  &:hover {
+    color: #64b0f3;
+  }
+}

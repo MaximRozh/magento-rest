@@ -1,0 +1,82 @@
+@import "./var.scss";
+
+.footer-banner-container {
+  padding: 50px 30px;
+  background-color: $secondary;
+  border-radius: 15px;
+  position: relative;
+  height: auto;
+  line-height: 1;
+  color: $body_color;
+  width: 100%;
+  margin-top: 120px;
+  @media (max-width: $medium) {
+    margin-top: 80px;
+  }
+  @media (max-width: $small) {
+    padding: 15px;
+    height: auto;
+  }
+  .banner-desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // flex-wrap: wrap;
+    @media (max-width: $medium) {
+      flex-wrap: wrap;
+    }
+    button {
+      border-radius: 15px;
+      padding: 10px 16px;
+      background-color: $body_color;
+      color: red;
+      border: none;
+      margin-top: 40px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .left {
+      h3 {
+        font-weight: 900;
+        font-size: 80px;
+        margin-left: 25px;
+        @media (max-width: $medium) {
+          font-size: 50px;
+          margin-left: 5px;
+        }
+      }
+    }
+    .footer-banner-image {
+      transform: scaleX(-1);
+      display: flex;
+      align-items: center;
+      width: 550px;
+      height: 450px;
+      @media (max-width: $small) {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        position: static;
+        align-self: center;
+      }
+    }
+    .right {
+      line-height: 1.4;
+      h3 {
+        font-weight: 800;
+        font-size: 60px;
+        @media (max-width: $medium) {
+          font-size: 45px;
+        }
+      }
+      p {
+        font-size: 18px;
+      }
+      .company-desc {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+}

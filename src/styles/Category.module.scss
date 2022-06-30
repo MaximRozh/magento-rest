@@ -1,0 +1,70 @@
+@import "./var.scss";
+
+.category-container {
+  margin-top: 30px;
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  @media (max-width: $small) {
+    flex-direction: column;
+    align-items: center;
+  }
+  .side-category {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    color: #003566;
+    @media (max-width: $small) {
+      flex-direction: row;
+      width: auto;
+      flex-wrap: wrap;
+      gap: 5px 15px;
+    }
+    li {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      list-style-type: none;
+    }
+    .active {
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+      font-weight: 600;
+    }
+  }
+  .product-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px 15px;
+    @media (max-width: $small) {
+      justify-content: center;
+    }
+    .product-image {
+      width: 100px !important;
+    }
+    div > div > div {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      @media (max-width: $small) {
+        width: 115px;
+        height: 115px;
+      }
+    }
+    .card-wrapper {
+      position: relative;
+      .button {
+        position: absolute;
+        top: 1px;
+        background: $secondary;
+        border: 0px;
+        width: 85px;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 15px 0px 15px 0px;
+        color: #eee;
+      }
+    }
+  }
+}
